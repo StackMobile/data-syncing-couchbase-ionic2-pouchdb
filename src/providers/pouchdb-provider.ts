@@ -57,8 +57,8 @@ export class PouchDBProvider {
   }
 
   public syncData() {
-    let remote = "http://couchbaseserver-1.622c32bd.cont.dockerapp.io:4984/app/";
-    let remoteDatabase = new PouchDB(remote);
+    let remoteURL = "dockerapp.io:4984/app/";
+    let remoteDatabase = new PouchDB(remoteURL);
     this.database.sync(remoteDatabase, {
       live: true
     }).on('change', change => {
